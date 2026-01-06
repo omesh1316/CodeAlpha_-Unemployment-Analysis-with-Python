@@ -1,97 +1,83 @@
-📊 Unemployment Analysis with Python
+# Unemployment Analysis with Python
 
-This project performs an end-to-end analysis of unemployment trends using Python.
-It focuses on data cleaning, exploratory data analysis, time-series visualization, and the impact assessment of COVID-19 on unemployment rates across regions.
+An end-to-end analysis of monthly unemployment trends with a focus on national and regional patterns, seasonal behavior, and the impact of COVID-19.
 
-🔍 Project Objectives
+## Overview
 
-Analyze monthly unemployment trends at the national and regional levels
+This project cleans and analyzes monthly unemployment rate data to:
+- Explore long-term trends at the national level
+- Compare regional performance and identify most/least affected regions
+- Quantify the COVID-19 impact by comparing pre-COVID and COVID/post-COVID periods
+- Reveal seasonality and monthly variations
+- Produce clear visualizations saved to the `visuals/` directory
 
-Identify top-performing and worst-affected regions based on unemployment rates
+## Objectives
 
-Study the impact of COVID-19 by comparing pre-COVID and post-COVID periods
+- Analyze monthly unemployment trends at national and regional levels
+- Identify top-performing and worst-affected regions by unemployment rate
+- Compare pre-COVID vs COVID-period changes and produce summary CSVs
+- Discover seasonal patterns (month-over-month) and visualize them
+- Generate reproducible visuals and CSV summaries for reporting
 
-Discover seasonal patterns and monthly variations in unemployment
+## Data
 
-Generate clear visualizations to support data-driven insights
+- Place your input CSV(s) in the `data/` directory. Expected columns include: `date` (YYYY-MM), `region` (or `state`), and `unemployment_rate` (percentage or decimal). Adjust column names in the script if necessary.
 
-⚙️ Setup & Usage
+## Setup & Usage
 
-1️⃣ Create a virtual environment and install dependencies
+1. Create a virtual environment and install dependencies:
 
+```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-
 pip install -r requirements.txt
+```
 
-2️⃣ Run the analysis script
+2. Run the analysis script:
 
+```powershell
 python analyze_unemployment.py
+```
 
-📁 Outputs
+All generated files will be saved inside the `visuals/` directory by default.
 
-All generated files are saved inside the visuals/ directory.
+## Outputs
 
-national_trend.png
+The script produces the following artifacts in `visuals/`:
 
-Monthly national unemployment rate time series
+- `national_trend.png` — Monthly national unemployment rate time series
+- `top_6_states.png` — Time series comparison for top 6 states by latest unemployment rate
+- `covid_impact_by_region.csv` — Numerical summary comparing pre-COVID and COVID-period unemployment changes
+- `covid_change_distribution.png` — Distribution plot of unemployment rate changes across regions
+- `seasonality_by_month.png` — Average unemployment rates grouped by calendar month
+- `heatmap_region_month.png` — Heatmap of unemployment rates by region and month
+- `decompose_<region>.png` — Time-series decomposition plots (trend, seasonal, residuals) for regions with sufficient data
 
+## Key Insights (typical findings)
 
-top_6_states.png
+- Clear spikes and fluctuations in unemployment during the COVID-19 period
+- Some regions show significantly larger increases than the national average
+- Seasonality: recurring monthly patterns that may repeat year-to-year
+- Visualizations highlight both long-term trends and short-term shocks for easy interpretation
 
-Time series comparison of top states (based on latest unemployment rate)
+## Technologies Used
 
+- Python
+- pandas, numpy
+- matplotlib, seaborn
+- statsmodels (for decomposition and time-series tools)
 
-covid_impact_by_region.csv
+## Use Cases
 
-Numerical summary comparing pre-COVID and COVID-period unemployment changes
+- Policy evaluation and regional economic monitoring
+- Academic analysis or coursework
+- Data science portfolio projects and demonstrations
 
+## Customization & Next Steps
 
-covid_change_distribution.png
+- If your dataset uses different column names or a different date format, update `analyze_unemployment.py` input parsing.
+- I can: add a configurable CLI, produce an interactive dashboard (Streamlit/Plotly Dash), or generate a report notebook showing step-by-step analysis and interpretation.
 
-Distribution plot showing unemployment rate changes across regions
+## Contact
 
-
-seasonality_by_month.png
-
-Average unemployment rates grouped by calendar month to identify seasonality
-
-
-heatmap_region_month.png
-
-Heatmap visualization of unemployment rates by region and month
-
-
-decompose_*.png
-
-Time-series decomposition plots (trend, seasonality, residuals) where sufficient data is available
-
-🧠 Key Insights
-
-Clear fluctuations in unemployment trends were observed during the COVID-19 period
-
-Certain regions experienced sharper increases compared to the national average
-
-Seasonal patterns indicate recurring monthly variations in unemployment rates
-
-Visualizations help in understanding both long-term trends and short-term shocks
-
-🛠️ Technologies Used
-
-Python
-
-Pandas & NumPy
-
-Matplotlib
-
-Time Series Analysis techniques
-
-📌 Use Case
-
-This analysis can support:
-
-Economic and social policy evaluation
-
-Academic projects and research
-
-Data science portfolio and resume projects
+For changes, improvements, or questions, reply here or open an issue in the repository.
