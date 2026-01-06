@@ -16,12 +16,16 @@ Discover seasonal patterns and monthly variations in unemployment
 Generate clear visualizations to support data-driven insights
 
 ⚙️ Setup & Usage
+
 1️⃣ Create a virtual environment and install dependencies
+
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
+
 pip install -r requirements.txt
 
 2️⃣ Run the analysis script
+
 python analyze_unemployment.py
 
 📁 Outputs
@@ -29,24 +33,37 @@ python analyze_unemployment.py
 All generated files are saved inside the visuals/ directory.
 
 national_trend.png
+
 Monthly national unemployment rate time series
 
+
 top_6_states.png
+
 Time series comparison of top states (based on latest unemployment rate)
 
+
 covid_impact_by_region.csv
+
 Numerical summary comparing pre-COVID and COVID-period unemployment changes
 
+
 covid_change_distribution.png
+
 Distribution plot showing unemployment rate changes across regions
 
+
 seasonality_by_month.png
+
 Average unemployment rates grouped by calendar month to identify seasonality
 
+
 heatmap_region_month.png
+
 Heatmap visualization of unemployment rates by region and month
 
+
 decompose_*.png
+
 Time-series decomposition plots (trend, seasonality, residuals) where sufficient data is available
 
 🧠 Key Insights
